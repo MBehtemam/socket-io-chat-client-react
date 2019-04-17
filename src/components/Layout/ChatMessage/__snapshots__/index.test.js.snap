@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for ChatMessage that match to snapshot 1`] = `
+.c0 {
+  width: 40%;
+  margin-top: 10px;
+  padding: 10px;
+  min-height: 10%;
+  max-height: 20%;
+  color: white;
+  border-radius: 0px 30px 30px 30px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+<article
+  className="c0"
+/>
+`;
