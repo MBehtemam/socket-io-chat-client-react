@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for InputSection should works 1`] = `
+.c0 {
+  height: 20%;
+}
+
+<section
+  className="c0"
+/>
+`;

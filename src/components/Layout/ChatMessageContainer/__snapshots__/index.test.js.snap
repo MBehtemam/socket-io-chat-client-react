@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for ChatMessageContainer that must works 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: flex-start;
+  -ms-flex-direction: flex-start;
+  flex-direction: flex-start;
+}
+
+<div
+  className="c0"
+/>
+`;
