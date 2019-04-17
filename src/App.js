@@ -16,7 +16,7 @@ const theme = {
 class App extends Component {
   componentDidMount() {
     this.props.clientConnect();
-    this.props.clientJoinToServer();
+    // this.props.clientJoinToServer();
   }
   render() {
     return (

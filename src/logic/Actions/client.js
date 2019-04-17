@@ -1,8 +1,12 @@
 import * as Actions from "../Constants/Actions";
-import * as Socket from "../Socket";
+import Socket from "../Socket";
+import SocketEvents from "../Socket/Events";
 export const clientConnect = () => {
   return dispatch => {
-    Socket.connect();
+    Socket.emit(SocketEvents.CLIENT_JOIN);
+    Socket.on(SocketEvents.CLIENT_JOIN, ({ ok, data }) => {
+      dispatch({ type: Actions.CLIENT_JOIN, payload: data.user });
+    });
   };
 };
 export const clientJoin = user => ({
