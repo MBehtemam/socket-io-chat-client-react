@@ -1,7 +1,5 @@
 import * as Actions from "../Constants/Actions";
 import * as Socket from "../Socket";
-import { dispatch } from "C:/Users/Mohammad/AppData/Local/Microsoft/TypeScript/3.4.3/node_modules/rxjs/internal/observable/pairs";
-
 export const clientConnect = () => {
   return dispatch => {
     Socket.connect();
@@ -12,6 +10,11 @@ export const clientJoin = user => ({
   payload: user
 });
 
+export const clientJoinToServer = () => {
+  return dispatch => {
+    Socket.join();
+  };
+};
 export const clientUpdateUserName = user => ({
   type: Actions.CLIENT_UPDATE_USERNAME,
   payload: user

@@ -6,6 +6,7 @@ import * as clientActions from "./Logic/Actions/client";
 class App extends Component {
   componentDidMount() {
     this.props.clientConnect();
+    this.props.clientJoinToServer();
   }
   render() {
     return <span>Hello</span>;
@@ -13,7 +14,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  clientConnect: () => dispatch(clientActions.clientConnect())
+  clientConnect: () => dispatch(clientActions.clientConnect()),
+  clientJoinToServer: () => dispatch(clientActions.clientJoinToServer())
 });
 export default connect(
   undefined,
