@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import * as clientActions from "./Logic/Actions/client";
+import SocketListenerActions from "./Logic/Actions/Socket";
 import Layout from "./components/Containers/layout";
 const theme = {
   tabBackground: "#242345",
@@ -15,8 +16,8 @@ const theme = {
 };
 class App extends Component {
   componentDidMount() {
-    this.props.clientConnect();
-    // this.props.clientJoinToServer();
+    this.props.clientJoin();
+    this.props.socketListener();
   }
   render() {
     return (
@@ -28,8 +29,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  clientConnect: () => dispatch(clientActions.clientConnect()),
-  clientJoinToServer: () => dispatch(clientActions.clientJoinToServer())
+  clientJoin: () => dispatch(clientActions.clientJoin()),
+  socketListener: () => dispatch(SocketListenerActions())
 });
 export default connect(
   undefined,

@@ -1,7 +1,7 @@
 import * as Actions from "../Constants/Actions";
 import Socket from "../Socket";
 import SocketEvents from "../Socket/Events";
-export const clientConnect = () => {
+export const clientJoin = () => {
   return dispatch => {
     Socket.emit(SocketEvents.CLIENT_JOIN);
     Socket.on(SocketEvents.CLIENT_JOIN, ({ ok, data }) => {
@@ -9,16 +9,7 @@ export const clientConnect = () => {
     });
   };
 };
-export const clientJoin = user => ({
-  type: Actions.CLIENT_JOIN,
-  payload: user
-});
 
-export const clientJoinToServer = () => {
-  return dispatch => {
-    Socket.join();
-  };
-};
 export const clientUpdateUserName = user => ({
   type: Actions.CLIENT_UPDATE_USERNAME,
   payload: user

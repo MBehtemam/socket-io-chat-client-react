@@ -11,7 +11,7 @@ const clientReducer = (state = defaultState, action) => {
     case Actions.CLIENT_JOIN:
       return {
         ...state,
-        username: action.payload.username
+        ...action.payload
       };
     case Actions.CLIENT_UPDATE_USERNAME: {
       return {
