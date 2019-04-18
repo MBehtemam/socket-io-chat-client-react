@@ -2,7 +2,7 @@ import * as Actions from "../Constants/Actions";
 export const defaultState = {
   theme: "light",
   lang: "en",
-  twelveMode: true,
+  twelveMode: false,
   sendByShortcut: false
 };
 

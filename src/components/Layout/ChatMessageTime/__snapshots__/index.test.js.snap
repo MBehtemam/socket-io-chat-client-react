@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suits for ChatMessageTime should match with snapshot 1`] = `
+<time
+  className=""
+>
+  NaN:NaN
+</time>
+`;

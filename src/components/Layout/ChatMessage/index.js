@@ -7,8 +7,8 @@ const ChatMessage = styled.article`
   width: 40%;
   margin-top: 10px;
   padding: 10px;
-  min-height: 10%;
-  max-height: 20%;
+  /* min-height: 10%;
+  max-height: 20%; */
   color: white;
   border-radius: ${props =>
     props.type === "send" ? `30px 0px 30px 30px` : `0px 30px 30px 30px`};

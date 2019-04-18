@@ -1,11 +1,13 @@
 import * as Actions from "../Constants/Actions";
 import Socket from "../Socket";
 import SocketEvents from "../Socket/Events";
+import * as UsersActions from "./users";
 export const clientJoin = () => {
   return dispatch => {
     Socket.emit(SocketEvents.CLIENT_JOIN);
     Socket.on(SocketEvents.CLIENT_JOIN, ({ ok, data }) => {
       dispatch({ type: Actions.CLIENT_JOIN, payload: data.user });
+      dispatch(UsersActions.setUsersList(data.usersList));
     });
   };
 };

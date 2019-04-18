@@ -63,4 +63,16 @@ describe("Test suits fro users reducer", () => {
       }
     });
   });
+  test("add new users list", () => {
+    const newList = {
+      id1: { username: "hope" },
+      id2: { username: "loop" }
+    };
+    expect(
+      usersReducer(undefined, {
+        type: Actions.USERS_SET_USERS_LIST,
+        payload: newList
+      })
+    ).toEqual(newList);
+  });
 });

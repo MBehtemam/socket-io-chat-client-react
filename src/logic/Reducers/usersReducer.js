@@ -3,11 +3,13 @@ export const defaultState = {};
 
 const usersReducers = (state = defaultState, action) => {
   switch (action.type) {
+    case Actions.USERS_SET_USERS_LIST:
+      return action.payload;
     case Actions.USERS_NEW_USER_JOIN: {
       return {
         ...state,
         [action.payload.userId]: {
-          username: action.payload.username,
+          ...action.payload,
           connected: true
         }
       };

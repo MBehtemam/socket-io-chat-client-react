@@ -30,7 +30,7 @@ class Chats extends Component {
                 </ChatMessageUsername>
                 <ChatMessageTime
                   time={message.time}
-                  is24HourMode={this.props.client.twelveMode}
+                  twelveMode={this.props.client.twelveMode}
                 />
               </ChatMessageMeta>
 

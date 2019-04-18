@@ -5,11 +5,11 @@ const Time = styled.time``;
 
 export default class ChatMessageTime extends Component {
   render() {
-    const { time, is24HourMode } = this.props;
+    const { time, twelveMode } = this.props;
     const d = new Date(time);
-    const t = is24HourMode
-      ? `${d.getHours()}:${d.getMinutes()}`
-      : `${d.getHours() - 12}:${d.getMinutes()}`;
+    const t = twelveMode
+      ? `${d.getHours() - 12}:${d.getMinutes()}`
+      : `${d.getHours()}:${d.getMinutes()}`;
     return <Time>{t}</Time>;
   }
 }
