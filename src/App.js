@@ -4,17 +4,44 @@ import { ThemeProvider } from "styled-components";
 import * as clientActions from "./Logic/Actions/client";
 import SocketListenerActions from "./Logic/Actions/Socket";
 import Layout from "./components/Containers/layout";
-const theme = {
-  tabBackground: "#242345",
-  tabHeight: "7%",
-  chatNotificationColor: "red",
-  messageBackground: "#232244",
-  chatContainerBackground: "#312D51",
-  chatContainerHeight: "85%",
-  messageInputBackground: "#242345",
-  messageInputHeight: "7%",
-  messageUsernameClientColor: "#658361",
-  messageUsernameUserColor: "#D1656A"
+import ThemeSelector from "./components/Containers/Settings/ThemeSelector";
+// const theme = {
+//   tabBackground: "#242345",
+//   tabHeight: "7%",
+//   chatNotificationColor: "red",
+//   messageBackground: "#232244",
+//   chatContainerBackground: "#312D51",
+//   chatContainerHeight: "85%",
+//   messageInputBackground: "#242345",
+//   messageInputHeight: "7%",
+//   messageUsernameClientColor: "#658361",
+//   messageUsernameUserColor: "#D1656A"
+// };
+const themes = {
+  dark: {
+    tabBackground: "#242345",
+    tabHeight: "7%",
+    chatNotificationColor: "red",
+    messageBackground: "#232244",
+    chatContainerBackground: "#312D51",
+    chatContainerHeight: "85%",
+    messageInputBackground: "#242345",
+    messageInputHeight: "7%",
+    messageUsernameClientColor: "#658361",
+    messageUsernameUserColor: "#D1656A"
+  },
+  light: {
+    tabBackground: "#00AF34",
+    tabHeight: "7%",
+    chatNotificationColor: "red",
+    messageBackground: "#56A0AF",
+    chatContainerBackground: "white",
+    chatContainerHeight: "85%",
+    messageInputBackground: "#242345",
+    messageInputHeight: "7%",
+    messageUsernameClientColor: "black",
+    messageUsernameUserColor: "black"
+  }
 };
 class App extends Component {
   componentDidMount() {
@@ -23,7 +50,7 @@ class App extends Component {
   }
   render() {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themes[this.props.theme]}>
         <Layout />
       </ThemeProvider>
     );
@@ -34,7 +61,10 @@ const mapDispatchToProps = dispatch => ({
   clientJoin: () => dispatch(clientActions.clientJoin()),
   socketListener: () => dispatch(SocketListenerActions())
 });
+const mapSateToProps = state => ({
+  theme: state.client.theme
+});
 export default connect(
-  undefined,
+  mapSateToProps,
   mapDispatchToProps
 )(App);

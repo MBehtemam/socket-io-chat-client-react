@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { clientUpdatetheme } from "../../../Logic/Actions/client";
 const themeSelector = ({ theme, changeTheme }) => (
   <form>
+    <legend>Theme</legend>
     <label>
       <input
         type="radio"

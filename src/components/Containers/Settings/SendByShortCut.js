@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { sendByShortcut } from "../../../Logic/Actions/client";
 const DisplayTime = ({ sendByShortcutState, canSend }) => (
   <form>
+    <legend>Send By Ctrl+Enter</legend>
     <label>
       <input
         type="radio"

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { updateDisplayClock } from "../../../Logic/Actions/client";
 const DisplayTime = ({ twelveMode, updateDisplay }) => (
   <form>
+    <legend>Clock Display</legend>
     <label>
       <input
         type="radio"
