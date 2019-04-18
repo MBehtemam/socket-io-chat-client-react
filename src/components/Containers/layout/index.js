@@ -4,6 +4,7 @@ import Container from "../../Layout/Container";
 import TabBar from "../TabBar";
 import Chats from "../Chats";
 import Tab from "../../Layout/Tab";
+import Settings from "../Settings";
 import MessageInput from "../MessageInput";
 class Layout extends Component {
   render() {
@@ -15,7 +16,7 @@ class Layout extends Component {
           <MessageInput />
         </Tab>
         <Tab tabId="settings" activeTab={this.props.tabs}>
-          Home
+          <Settings />
         </Tab>
       </Container>
     );

@@ -12,10 +12,17 @@ export const clientJoin = () => {
   };
 };
 
-export const clientUpdateUserName = user => ({
-  type: Actions.CLIENT_UPDATE_USERNAME,
-  payload: user
-});
+export const clientUpdateUserName = newUserName => {
+  return dispatch => {
+    Socket.emit(SocketEvents.CLIENT_USER_NAME_CHANGE, { newUserName });
+    Socket.on(SocketEvents.CLIENT_USER_NAME_CHANGE, res => {
+      dispatch({
+        type: Actions.CLIENT_UPDATE_USERNAME,
+        payload: res.data.username
+      });
+    });
+  };
+};
 
 export const clientUpdateLang = lang => ({
   type: Actions.CLIENT_UPDATE_LANG,

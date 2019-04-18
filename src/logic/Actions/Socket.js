@@ -10,6 +10,11 @@ const SocketListener = () => {
     Socket.on(Events.USER_JOIN, res => {
       dispatch(UsersAction.addNewUser(res.data.user));
     });
+    Socket.on(Events.USER_USER_NAME_CHANGE, res => {
+      dispatch(
+        UsersAction.userUpdateUserName(res.data.userId, res.data.username)
+      );
+    });
   };
 };
 export default SocketListener;

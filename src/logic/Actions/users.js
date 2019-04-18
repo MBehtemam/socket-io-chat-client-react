@@ -9,3 +9,11 @@ export const addNewUser = user => ({
   type: Actions.USERS_NEW_USER_JOIN,
   payload: user
 });
+
+export const userUpdateUserName = (userId, username) => ({
+  type: Actions.USERS_USER_CHANGE_USERNAME,
+  payload: {
+    userId,
+    username
+  }
+});

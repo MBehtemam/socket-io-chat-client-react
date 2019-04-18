@@ -16,7 +16,7 @@ const clientReducer = (state = defaultState, action) => {
     case Actions.CLIENT_UPDATE_USERNAME: {
       return {
         ...state,
-        username: action.payload.username
+        username: action.payload
       };
     }
     case Actions.CLIENT_UPDATE_DISPLAY_CLOCK: {
