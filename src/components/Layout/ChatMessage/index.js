@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const ChatMessage = styled.article`
+  display: flex;
+  flex-direction: column;
   background-color: ${props => props.theme.messageBackground};
   width: 40%;
   margin-top: 10px;

@@ -12,7 +12,9 @@ const theme = {
   chatContainerBackground: "#312D51",
   chatContainerHeight: "85%",
   messageInputBackground: "#242345",
-  messageInputHeight: "7%"
+  messageInputHeight: "7%",
+  messageUsernameClientColor: "#658361",
+  messageUsernameUserColor: "#D1656A"
 };
 class App extends Component {
   componentDidMount() {

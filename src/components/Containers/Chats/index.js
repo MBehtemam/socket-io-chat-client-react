@@ -3,16 +3,16 @@ import { connect } from "react-redux";
 import ChatLog from "../../Layout/ChatLog";
 import ChatMessageContainer from "../../Layout/ChatMessageContainer";
 import ChatMessage from "../../Layout/ChatMessage";
-import messagesReducer from "../../../Logic/Reducers/messagesReducer";
-import clientReducer from "../../../Logic/Reducers/clientReducer";
-import usersReducer from "../../../Logic/Reducers/usersReducer";
+import ChatMessageMeta from "../../Layout/ChatMessageMeta";
+import ChatMessageTime from "../../Layout/ChatMessageTime";
+import ChatMessageUsername from "../../Layout/ChatMessageUsername";
 class Chats extends Component {
   render() {
     return (
       <ChatLog>
-        {this.props.messages.map((message, i) => (
+        {this.props.messages.map(message => (
           <ChatMessageContainer
-            key={i}
+            key={message.id}
             type={
               message.sender === this.props.client.userId ? "send" : "receive"
             }
@@ -22,6 +22,18 @@ class Chats extends Component {
                 message.sender === this.props.client.userId ? "send" : "receive"
               }
             >
+              <ChatMessageMeta>
+                <ChatMessageUsername>
+                  {message.sender === this.props.client.userId
+                    ? this.props.client.username
+                    : this.props.users[message.sender].username}
+                </ChatMessageUsername>
+                <ChatMessageTime
+                  time={message.time}
+                  is24HourMode={this.props.client.twelveMode}
+                />
+              </ChatMessageMeta>
+
               {message.msg}
             </ChatMessage>
           </ChatMessageContainer>
