@@ -29,8 +29,12 @@ export const clientUpdateLang = lang => ({
   payload: lang
 });
 
+export const clientUpdatetheme = theme => ({
+  type: Actions.CLIENT_UPDATE_THEME,
+  payload: theme
+});
 export const updateDisplayClock = clockType => ({
-  type: Actions.CLIENT_SEND_BY_SHORTCUT,
+  type: Actions.CLIENT_UPDATE_DISPLAY_CLOCK,
   payload: clockType
 });
 export const sendByShortcut = send => ({

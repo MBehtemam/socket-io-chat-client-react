@@ -2,13 +2,19 @@ import React, { Component } from "react";
 import Row from "../../Layout/Row";
 import Column from "../../Layout/Column";
 import ChangeUserName from "./ChangeUserName";
+import ThemeSelector from "./ThemeSelector";
+import DisplayTime from "./DisplayTime";
+import SendByShortCut from "./SendByShortCut";
 class Settings extends Component {
   render() {
     return (
       <Row>
-        <Row>
+        <Column>
           <ChangeUserName />
-        </Row>
+          <ThemeSelector />
+          <DisplayTime />
+          <SendByShortCut />
+        </Column>
       </Row>
     );
   }

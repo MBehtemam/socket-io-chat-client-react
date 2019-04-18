@@ -37,6 +37,12 @@ const clientReducer = (state = defaultState, action) => {
         lang: action.payload
       };
     }
+    case Actions.CLIENT_UPDATE_THEME:
+      return {
+        ...state,
+        theme: action.payload
+      };
+
     case Actions.CLIENT_RESET_TO_DEFAULT: {
       return {
         ...state,
