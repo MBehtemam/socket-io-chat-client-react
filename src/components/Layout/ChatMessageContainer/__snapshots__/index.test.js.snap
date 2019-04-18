@@ -6,9 +6,10 @@ exports[`Test suits for ChatMessageContainer that must works 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: flex-start;
-  -ms-flex-direction: flex-start;
-  flex-direction: flex-start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 <div

@@ -17,7 +17,7 @@ describe("Test suits for client reducer", () => {
     expect(
       clientReducer(
         { ...defaultState, username: "loop" },
-        { type: Actions.CLIENT_UPDATE_USERNAME, payload: { username: "hope" } }
+        { type: Actions.CLIENT_UPDATE_USERNAME, payload: "hope" }
       )
     ).toHaveProperty("username", "hope");
   });

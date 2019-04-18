@@ -2,7 +2,17 @@
 
 exports[`Test suits for InputSection should works 1`] = `
 .c0 {
-  height: 20%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 input[type="text"] {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  border-radius: 20px;
 }
 
 <section

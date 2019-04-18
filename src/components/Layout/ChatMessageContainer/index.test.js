@@ -11,12 +11,12 @@ describe("Test suits for ChatMessageContainer", () => {
   });
   test("that must have correct direction for send message", () => {
     const tree = renderer.create(<ChatMessageContainer type="send" />).toJSON();
-    expect(tree).toHaveStyleRule("flex-direction", "flex-end");
+    expect(tree).toHaveStyleRule("justify-content", "flex-end");
   });
   test("that must have correct direction for receive message", () => {
     const tree = renderer
       .create(<ChatMessageContainer type="receive" />)
       .toJSON();
-    expect(tree).toHaveStyleRule("flex-direction", "flex-start");
+    expect(tree).toHaveStyleRule("justify-content", "flex-start");
   });
 });
