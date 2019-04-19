@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import * as clientActions from "./Logic/Actions/client";
 import SocketListenerActions from "./Logic/Actions/Socket";
 import Layout from "./components/Containers/layout";
-import ThemeSelector from "./components/Containers/Settings/ThemeSelector";
+import "./Util/i18n";
 // const theme = {
 //   tabBackground: "#242345",
 //   tabHeight: "7%",

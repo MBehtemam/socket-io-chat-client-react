@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { clientUpdateUserName } from "../../../Logic/Actions/client";
+import { useTranslation, withTranslation, Trans } from "react-i18next";
+
 class ChangeUserName extends Component {
   state = {
     username: ""
@@ -11,9 +13,10 @@ class ChangeUserName extends Component {
     this.setState({ username: "" });
   };
   render() {
+    const { t } = this.props;
     return (
       <form onSubmit={this.changeUserName}>
-        <legend>Change Username</legend>
+        <legend>{t("change_username")}</legend>
         <input
           type="text"
           defaultValue={
@@ -23,7 +26,7 @@ class ChangeUserName extends Component {
           }
           onChange={e => this.setState({ username: e.target.value })}
         />
-        <button type="submit">Change</button>
+        <button type="submit">{t("change")}</button>
       </form>
     );
   }
@@ -38,4 +41,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChangeUserName);
+)(withTranslation()(ChangeUserName));

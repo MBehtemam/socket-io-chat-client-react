@@ -1,6 +1,7 @@
 import * as Actions from "../Constants/Actions";
 import Socket from "../Socket";
 import SocketEvents from "../Socket/Events";
+import i18n from "../../Util/i18n";
 import * as UsersActions from "./users";
 export const clientJoin = () => {
   return dispatch => {
@@ -24,10 +25,15 @@ export const clientUpdateUserName = newUserName => {
   };
 };
 
-export const clientUpdateLang = lang => ({
-  type: Actions.CLIENT_UPDATE_LANG,
-  payload: lang
-});
+export const clientUpdateLang = lang => {
+  return dispatch => {
+    i18n.changeLanguage(lang);
+    dispatch({
+      type: Actions.CLIENT_UPDATE_LANG,
+      payload: lang
+    });
+  };
+};
 
 export const clientUpdatetheme = theme => ({
   type: Actions.CLIENT_UPDATE_THEME,

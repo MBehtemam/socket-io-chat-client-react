@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { useTranslation, withTranslation, Trans } from "react-i18next";
 import Tab from "../../Layout/Tabbar";
 import * as tabsActions from "../../../Logic/Actions/tabs";
 class TabBar extends Component {
   render() {
+    const { t, i18n } = this.props;
     return (
       <Tab>
         <button
@@ -13,13 +15,13 @@ class TabBar extends Component {
             this.props.unreadMessages > 0 ? this.props.unreadMessages : ""
           }
         >
-          Chat
+          {t("chat")}
         </button>
         <button
           active={"settings" === this.props.tabs ? "true" : "false"}
           onClick={() => this.props.changeTab("settings")}
         >
-          Settings
+          {t("settings")}
         </button>
       </Tab>
     );
@@ -35,4 +37,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TabBar);
+)(withTranslation()(TabBar));

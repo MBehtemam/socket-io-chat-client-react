@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { updateDisplayClock } from "../../../Logic/Actions/client";
-const DisplayTime = ({ twelveMode, updateDisplay }) => (
+import { useTranslation, withTranslation, Trans } from "react-i18next";
+
+const DisplayTime = ({ twelveMode, updateDisplay, t }) => (
   <form>
-    <legend>Clock Display</legend>
+    <legend>{t("clock_display")}</legend>
     <label>
       <input
         type="radio"
@@ -11,7 +13,7 @@ const DisplayTime = ({ twelveMode, updateDisplay }) => (
         onChange={e => updateDisplay(e.target.value === "true" ? true : false)}
         checked={true === twelveMode}
       />
-      12Hours
+      {t("12Hours")}
     </label>
     <label>
       <input
@@ -20,7 +22,7 @@ const DisplayTime = ({ twelveMode, updateDisplay }) => (
         onChange={e => updateDisplay(e.target.value === "true" ? true : false)}
         checked={false === twelveMode}
       />
-      24Hours
+      {t("24Hours")}
     </label>
   </form>
 );
@@ -33,4 +35,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DisplayTime);
+)(withTranslation(DisplayTime));

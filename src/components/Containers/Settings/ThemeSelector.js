@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useTranslation, withTranslation, Trans } from "react-i18next";
+
 import { clientUpdatetheme } from "../../../Logic/Actions/client";
-const themeSelector = ({ theme, changeTheme }) => (
+const themeSelector = ({ theme, changeTheme, t }) => (
   <form>
-    <legend>Theme</legend>
+    <legend>{t("theme")}</legend>
     <label>
       <input
         type="radio"
@@ -11,7 +13,7 @@ const themeSelector = ({ theme, changeTheme }) => (
         onChange={e => changeTheme(e.target.value)}
         checked={"light" === theme}
       />
-      Light
+      {t("light")}
     </label>
     <label>
       <input
@@ -20,7 +22,7 @@ const themeSelector = ({ theme, changeTheme }) => (
         onChange={e => changeTheme(e.target.value)}
         checked={"dark" === theme}
       />
-      Dark
+      {t("dark")}
     </label>
   </form>
 );
@@ -33,4 +35,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(themeSelector);
+)(withTranslation()(themeSelector));

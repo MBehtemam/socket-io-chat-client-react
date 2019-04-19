@@ -6,6 +6,7 @@ import ThemeSelector from "./ThemeSelector";
 import DisplayTime from "./DisplayTime";
 import SendByShortCut from "./SendByShortCut";
 import SettingsLayout from "../../Layout/Settings";
+import LanguageSelector from "./LanguageSelector";
 class Settings extends Component {
   render() {
     return (
@@ -14,6 +15,7 @@ class Settings extends Component {
         <ThemeSelector />
         <DisplayTime />
         <SendByShortCut />
+        <LanguageSelector />
       </SettingsLayout>
     );
   }

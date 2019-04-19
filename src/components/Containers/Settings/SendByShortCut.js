@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import { useTranslation, withTranslation, Trans } from "react-i18next";
+
 import { sendByShortcut } from "../../../Logic/Actions/client";
-const DisplayTime = ({ sendByShortcutState, canSend }) => (
+const DisplayTime = ({ sendByShortcutState, canSend, t }) => (
   <form>
-    <legend>Send By Ctrl+Enter</legend>
+    <legend>{t("send_shortcut")}</legend>
     <label>
       <input
         type="radio"
@@ -11,7 +13,7 @@ const DisplayTime = ({ sendByShortcutState, canSend }) => (
         onChange={e => canSend(e.target.value === "true" ? true : false)}
         checked={true === sendByShortcutState}
       />
-      On
+      {t("on")}
     </label>
     <label>
       <input
@@ -20,7 +22,7 @@ const DisplayTime = ({ sendByShortcutState, canSend }) => (
         onChange={e => canSend(e.target.value === "true" ? true : false)}
         checked={false === sendByShortcutState}
       />
-      Off
+      {t("off")}
     </label>
   </form>
 );
@@ -33,4 +35,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DisplayTime);
+)(withTranslation()(DisplayTime));
