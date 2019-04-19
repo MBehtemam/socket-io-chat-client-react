@@ -21,6 +21,7 @@ const themes = {
   dark: {
     tabBackground: "#242345",
     tabHeight: "7%",
+    mainTextColor: "white",
     chatNotificationColor: "red",
     messageBackground: "#232244",
     chatContainerBackground: "#312D51",
@@ -33,6 +34,7 @@ const themes = {
   light: {
     tabBackground: "#00AF34",
     tabHeight: "7%",
+    mainTextColor: "black",
     chatNotificationColor: "red",
     messageBackground: "#56A0AF",
     chatContainerBackground: "white",

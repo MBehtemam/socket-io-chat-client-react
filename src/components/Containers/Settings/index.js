@@ -5,17 +5,20 @@ import ChangeUserName from "./ChangeUserName";
 import ThemeSelector from "./ThemeSelector";
 import DisplayTime from "./DisplayTime";
 import SendByShortCut from "./SendByShortCut";
+import SettingsLayout from "../../Layout/Settings";
 class Settings extends Component {
   render() {
     return (
-      <Row>
-        <Column>
-          <ChangeUserName />
-          <ThemeSelector />
-          <DisplayTime />
-          <SendByShortCut />
-        </Column>
-      </Row>
+      <SettingsLayout>
+        <Row>
+          <Column>
+            <ChangeUserName />
+            <ThemeSelector />
+            <DisplayTime />
+            <SendByShortCut />
+          </Column>
+        </Row>
+      </SettingsLayout>
     );
   }
 }
