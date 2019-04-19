@@ -6,7 +6,6 @@ const Settings = styled.div`
   background-color: ${props => props.theme.chatContainerBackground};
   display: flex;
   flex-direction: column;
-  div,
   form {
     margin-top: 20px;
   }

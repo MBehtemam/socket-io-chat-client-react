@@ -5,7 +5,7 @@ import { useTranslation, withTranslation, Trans } from "react-i18next";
 import { clientUpdateLang } from "../../../Logic/Actions/client";
 const LanguageSelector = ({ lang, changeLang, t }) => (
   <form>
-    <legend>{t("theme")}</legend>
+    <legend>{t("change_lang")}</legend>
     <label>
       <select defaultValue={lang} onChange={e => changeLang(e.target.value)}>
         <option value="en">English</option>

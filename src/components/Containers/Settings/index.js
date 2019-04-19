@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Row from "../../Layout/Row";
-import Column from "../../Layout/Column";
 import ChangeUserName from "./ChangeUserName";
 import ThemeSelector from "./ThemeSelector";
 import DisplayTime from "./DisplayTime";
