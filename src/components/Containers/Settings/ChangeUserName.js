@@ -13,6 +13,7 @@ class ChangeUserName extends Component {
   render() {
     return (
       <form onSubmit={this.changeUserName}>
+        <legend>Change Username</legend>
         <input
           type="text"
           defaultValue={

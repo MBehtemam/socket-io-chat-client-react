@@ -10,14 +10,10 @@ class Settings extends Component {
   render() {
     return (
       <SettingsLayout>
-        <Row>
-          <Column>
-            <ChangeUserName />
-            <ThemeSelector />
-            <DisplayTime />
-            <SendByShortCut />
-          </Column>
-        </Row>
+        <ChangeUserName />
+        <ThemeSelector />
+        <DisplayTime />
+        <SendByShortCut />
       </SettingsLayout>
     );
   }

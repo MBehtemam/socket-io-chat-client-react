@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import InputSection from "../../Layout/InputSection";
+import CircleButton from "../../Layout/Buttons/Circle";
 import * as messageActions from "../../../Logic/Actions/messages";
 
 class MessageInput extends Component {
@@ -31,7 +32,7 @@ class MessageInput extends Component {
           value={this.state.msg}
         />
 
-        <button onClick={this.sendMessageHandle}>Send</button>
+        <CircleButton onClick={this.sendMessageHandle}>Send</CircleButton>
       </InputSection>
     );
   }
