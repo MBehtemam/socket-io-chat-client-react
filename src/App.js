@@ -32,14 +32,14 @@ const themes = {
     messageUsernameUserColor: "#D1656A"
   },
   light: {
-    tabBackground: "#00AF34",
+    tabBackground: "#eeeeee",
     tabHeight: "7%",
     mainTextColor: "black",
     chatNotificationColor: "red",
     messageBackground: "#56A0AF",
     chatContainerBackground: "white",
     chatContainerHeight: "85%",
-    messageInputBackground: "#242345",
+    messageInputBackground: "#eeeeee",
     messageInputHeight: "7%",
     messageUsernameClientColor: "black",
     messageUsernameUserColor: "black"

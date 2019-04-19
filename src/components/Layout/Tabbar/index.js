@@ -30,6 +30,10 @@ const Tabbar = styled.nav`
     right: -1px;
     top: 3px;
   }
+  button[active="true"] {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 `;
 
 export default Tabbar;

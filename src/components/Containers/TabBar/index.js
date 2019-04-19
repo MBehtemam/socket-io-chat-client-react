@@ -7,6 +7,7 @@ class TabBar extends Component {
     return (
       <Tab>
         <button
+          active={"chat" === this.props.tabs ? "true" : "false"}
           onClick={() => this.props.changeTab("chat")}
           data-notifications={
             this.props.unreadMessages > 0 ? this.props.unreadMessages : ""
@@ -14,7 +15,10 @@ class TabBar extends Component {
         >
           Chat
         </button>
-        <button onClick={() => this.props.changeTab("settings")}>
+        <button
+          active={"settings" === this.props.tabs ? "true" : "false"}
+          onClick={() => this.props.changeTab("settings")}
+        >
           Settings
         </button>
       </Tab>
@@ -25,7 +29,8 @@ const mapDispatchToProps = dispatch => ({
   changeTab: tabId => dispatch(tabsActions.changeTab(tabId))
 });
 const mapStateToProps = state => ({
-  unreadMessages: state.unreadMessages
+  unreadMessages: state.unreadMessages,
+  tabs: state.tabs
 });
 export default connect(
   mapStateToProps,

@@ -1,6 +1,6 @@
 import * as Actions from "../Constants/Actions";
 export const defaultState = {
-  theme: "dark",
+  theme: "light",
   lang: "en",
   twelveMode: false,
   sendByShortcut: false
